@@ -43,7 +43,7 @@ class AppPackageMakerExe extends AppPackageMaker {
     InnoSetupScript script = InnoSetupScript.fromMakeConfig(makeConfig);
     InnoSetupCompiler compiler = InnoSetupCompiler();
 
-    bool compiled = await compiler.compile(script);
+    bool compiled = await compiler.compile(script, customPath: makeConfig.innoSetupPath);
 
     if (!compiled) {
       throw MakeError();

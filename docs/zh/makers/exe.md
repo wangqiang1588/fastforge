@@ -20,6 +20,8 @@ create_desktop_icon: true
 # install_dir_name: "D:\\HELLO-WORLD"
 # 这里的路径是相对于项目根目录的路径； 图标格式必须是ico格式，不能是png或其它
 # setup_icon_file: windows\runner\resources\app_icon.ico
+# 自定义 Inno Setup 安装路径（可选，默认为 "C:\Program Files (x86)\Inno Setup 6"）
+# inno_setup_path: "C:\Program Files (x86)\Inno Setup 6"
 locales:
   - en
   - zh
@@ -32,6 +34,15 @@ fastforge package --platform windows --targets exe
 ```
 
 ## 高级用法
+
+### 自定义 Inno Setup 路径
+
+默认情况下，`fastforge` 在 `C:\Program Files (x86)\Inno Setup 6` 路径查找 Inno Setup 6。如果你将 Inno Setup 安装在其他位置，可以在 `make_config.yaml` 中使用 `inno_setup_path` 选项指定自定义路径：
+
+```yaml
+# 自定义 Inno Setup 安装路径
+inno_setup_path: "D:\Tools\Inno Setup 6"
+```
 
 ### 自定义 Inno Setup 模板
 

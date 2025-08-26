@@ -6,6 +6,7 @@ import 'package:path/path.dart' as p;
 class MakeExeConfig extends MakeConfig {
   MakeExeConfig({
     this.scriptTemplate,
+    this.innoSetupPath,
     required this.appId,
     this.executableName,
     this.displayName,
@@ -33,6 +34,7 @@ class MakeExeConfig extends MakeConfig {
 
     MakeExeConfig makeExeConfig = MakeExeConfig(
       scriptTemplate: json['script_template'],
+      innoSetupPath: json['inno_setup_path'],
       appId: json['app_id'] ?? json['appId'],
       executableName: json['executable_name'],
       displayName: json['display_name'],
@@ -49,6 +51,7 @@ class MakeExeConfig extends MakeConfig {
   }
 
   String? scriptTemplate;
+  String? innoSetupPath;
   final String appId;
   String? executableName;
   String? displayName;
@@ -80,6 +83,7 @@ class MakeExeConfig extends MakeConfig {
   Map<String, dynamic> toJson() {
     return {
       'script_template': scriptTemplate,
+      'inno_setup_path': innoSetupPath,
       'app_id': appId,
       'app_name': appName,
       'app_version': appVersion.toString(),

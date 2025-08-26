@@ -20,6 +20,8 @@ create_desktop_icon: true
 # install_dir_name: "D:\\HELLO-WORLD"
 # This path is relative to the root directory of your project; The format of icon file must be ico, can not be png or others
 # setup_icon_file: windows\runner\resources\app_icon.ico
+# Custom Inno Setup installation path (optional, defaults to "C:\Program Files (x86)\Inno Setup 6")
+# inno_setup_path: "C:\Program Files (x86)\Inno Setup 6"
 locales:
   - en
   - zh
@@ -32,6 +34,15 @@ fastforge package --platform windows --targets exe
 ```
 
 ## Advanced usage
+
+### Custom Inno Setup path
+
+By default, `fastforge` looks for Inno Setup 6 at `C:\Program Files (x86)\Inno Setup 6`. If you have installed Inno Setup in a different location, you can specify the custom path using the `inno_setup_path` option in your `make_config.yaml`:
+
+```yaml
+# Custom Inno Setup installation path
+inno_setup_path: "D:\Tools\Inno Setup 6"
+```
 
 ### Custom Inno Setup template
 

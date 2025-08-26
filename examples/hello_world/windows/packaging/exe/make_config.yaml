@@ -6,5 +6,7 @@ display_name: Hello 世界
 create_desktop_icon: true
 launch_at_startup: true
 # install_dir_name: "D:\\HELLO-WORLD"
+# Custom Inno Setup path (optional, defaults to "C:\Program Files (x86)\Inno Setup 6")
+# inno_setup_path: "D:\Tools\Inno Setup 6"
 locales:
   - zh

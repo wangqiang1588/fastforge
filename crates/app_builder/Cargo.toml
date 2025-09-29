@@ -1,0 +1,9 @@
+[package]
+name = "app_builder"
+version = "0.0.1"
+edition = "2024"
+authors = ["LiJianying <lijy91@foxmail.com>"]
+description = "A unified app builder"
+license = "MIT"
+
+[dependencies]

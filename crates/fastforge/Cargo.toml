@@ -1,0 +1,9 @@
+[package]
+name = "fastforge"
+version = "0.0.1"
+edition = "2024"
+authors = ["LiJianying <lijy91@foxmail.com>"]
+description = "The ultimate all-in-one app packaging and distribution tool"
+license = "MIT"
+
+[dependencies]

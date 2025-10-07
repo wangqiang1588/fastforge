@@ -14,4 +14,10 @@ pub enum PackageError {
     General(String),
 }
 
+impl std::fmt::Display for PackageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        todo!()
+    }
+}
+
 impl std::error::Error for PackageError {}

@@ -1,6 +1,9 @@
 use crate::types::{AnalyzeConfig, AnalyzeError, AnalyzeResult};
 
 pub trait AppAnalyzer {
+    /// Create a new instance of this analyzer.
+    fn new() -> Self;
+
     /// Get the name/identifier of this analyzer.
     fn name(&self) -> &str;
 

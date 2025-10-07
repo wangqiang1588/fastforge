@@ -7,3 +7,4 @@ description = "A unified app builder"
 license = "MIT"
 
 [dependencies]
+log = "0.4.28"

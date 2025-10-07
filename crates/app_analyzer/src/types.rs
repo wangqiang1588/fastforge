@@ -12,12 +12,12 @@ impl AnalyzeConfig {
 #[derive(Debug)]
 pub struct AnalyzeResult {
     pub success: bool,
-    pub message: String,
+    pub data: serde_json::Value,
 }
 
 impl AnalyzeResult {
-    pub fn new(success: bool, message: String) -> Self {
-        Self { success, message }
+    pub fn new(success: bool, data: serde_json::Value) -> Self {
+        Self { success, data }
     }
 }
 
@@ -26,9 +26,17 @@ pub enum AnalyzeError {
     General(String),
 }
 
+impl AnalyzeError {
+    pub fn new(message: &str) -> Self {
+        Self::General(message.to_string())
+    }
+}
+
 impl std::fmt::Display for AnalyzeError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        todo!()
+    fn fmt(&self, _f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            AnalyzeError::General(msg) => write!(_f, "Analyze error: {}", msg),
+        }
     }
 }
 

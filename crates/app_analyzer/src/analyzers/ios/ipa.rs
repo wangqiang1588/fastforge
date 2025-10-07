@@ -1,9 +1,9 @@
 use crate::traits::AppAnalyzer;
 use crate::types::{AnalyzeConfig, AnalyzeError, AnalyzeResult};
 
-pub struct AndroidAabAnalyzer;
+pub struct IOSIpaAnalyzer;
 
-impl AppAnalyzer for AndroidAabAnalyzer {
+impl AppAnalyzer for IOSIpaAnalyzer {
     fn new() -> Self {
         Self
     }

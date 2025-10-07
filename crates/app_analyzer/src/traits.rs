@@ -1,4 +1,5 @@
 use crate::types::{AnalyzeConfig, AnalyzeError, AnalyzeResult};
+use std::path::Path;
 
 pub trait AppAnalyzer {
     /// Create a new instance of this analyzer.
@@ -10,6 +11,13 @@ pub trait AppAnalyzer {
     /// Check if this analyzer is supported on the current platform.
     fn is_supported_on_current_platform(&self) -> bool;
 
-    /// Analyze the application using the provided configuration.
-    fn analyze(&self, config: AnalyzeConfig) -> Result<AnalyzeResult, AnalyzeError>;
+    /// Performs the core analysis logic using the provided configuration.
+    /// This method should be implemented by concrete analyzers to define their specific analysis behavior.
+    fn perform_analyze(&self, config: &AnalyzeConfig) -> Result<AnalyzeResult, AnalyzeError>;
+
+    /// Analyzes the application using the provided configuration.
+    /// This is the main entry point for running analysis and internally calls `perform_analyze`.
+    fn analyze(&self, config: AnalyzeConfig) -> Result<AnalyzeResult, AnalyzeError> {
+        return self.perform_analyze(&config);
+    }
 }

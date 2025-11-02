@@ -4,11 +4,8 @@ use crate::types::{PublishConfig, PublishError, PublishResult};
 pub struct AppStorePublisher;
 
 impl AppPublisher for AppStorePublisher {
-    fn new() -> Self
-    where
-        Self: Sized,
-    {
-        todo!()
+    fn new() -> Self {
+        Self
     }
 
     fn name(&self) -> &str {
@@ -19,7 +16,7 @@ impl AppPublisher for AppStorePublisher {
         todo!()
     }
 
-    fn publish(&self, config: PublishConfig) -> Result<PublishResult, PublishError> {
+    fn perform_publish(&self, config: &PublishConfig) -> Result<PublishResult, PublishError> {
         todo!()
     }
 }

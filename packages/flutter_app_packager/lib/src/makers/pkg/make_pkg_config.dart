@@ -3,25 +3,25 @@ import 'dart:io';
 import 'package:flutter_app_packager/src/api/app_package_maker.dart';
 
 class MakePkgConfig extends MakeConfig {
-  MakePkgConfig({
-    this.installPath,
-    this.signIdentity,
-  });
+  MakePkgConfig({this.installPath, this.signIdentity, this.scripts});
 
   factory MakePkgConfig.fromJson(Map<String, dynamic> json) {
     return MakePkgConfig(
       installPath: json['install-path'],
       signIdentity: json['sign-identity'],
+      scripts: json['scripts'],
     );
   }
   final String? installPath;
   final String? signIdentity;
+  final String? scripts;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       'install-path': installPath,
       'sign-identity': signIdentity,
+      'scripts': scripts,
     }..removeWhere((key, value) => value == null);
   }
 }

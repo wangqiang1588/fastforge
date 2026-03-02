@@ -38,8 +38,10 @@ class AppPackageMakerPkg extends AppPackageMaker {
       appFile.path,
       makeConfig.installPath ?? '/Applications/',
       unsignedPkgFile.path,
-      makeConfig.scripts ?? '--scripts',
-      makeConfig.scripts,
+      makeConfig.scriptsPath ?? '--scripts',
+      makeConfig.scriptsPath,
+      makeConfig.componentPath ?? '--component',
+      makeConfig.componentPath
     ]);
     if (makeConfig.signIdentity != null) {
       await $('xcrun', [

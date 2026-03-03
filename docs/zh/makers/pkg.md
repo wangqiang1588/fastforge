@@ -9,8 +9,8 @@
 ```yaml
 component-path: AppName
 install-path: /Applications
-sign-identity: <your-sign-identity>
-scripts-path: <your-scripts-path>
+sign-identity: <可选> <your-sign-identity>
+scripts-path: <可选> <your-scripts-path>
 ```
 
 运行：

@@ -9,8 +9,8 @@ Add `make_config.yaml` to your project `macos/packaging/pkg` directory.
 ```yaml
 component-path: AppName
 install-path: /Applications
-sign-identity: <your-sign-identity>
-scripts-path: <your-scripts-path>
+sign-identity: <optional> <your-sign-identity>
+scripts-path: <optional> <your-scripts-path>
 ```
 
 Run:

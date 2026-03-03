@@ -32,17 +32,23 @@ class AppPackageMakerPkg extends AppPackageMaker {
       ),
     );
 
-    await $('xcrun', [
+    final pkgBuild = [
       'productbuild',
       '--root',
       appFile.path,
       makeConfig.installPath ?? '/Applications/',
       unsignedPkgFile.path,
-      makeConfig.scriptsPath ?? '--scripts',
-      makeConfig.scriptsPath,
-      makeConfig.componentPath ?? '--component',
-      makeConfig.componentPath,
-    ]);
+    ];
+    if (null != makeConfig.scriptsPath) {
+      pkgBuild.add('--scripts');
+      pkgBuild.add(makeConfig.scriptsPath!);
+    }
+    if (null != makeConfig.componentPath) {
+      pkgBuild.add('--component');
+      pkgBuild.add(makeConfig.componentPath!);
+    }
+
+    await $('xcrun', pkgBuild);
     if (makeConfig.signIdentity != null) {
       await $('xcrun', [
         'productsign',

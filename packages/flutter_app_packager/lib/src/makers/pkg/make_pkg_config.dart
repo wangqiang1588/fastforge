@@ -3,7 +3,11 @@ import 'dart:io';
 import 'package:flutter_app_packager/src/api/app_package_maker.dart';
 
 class MakePkgConfig extends MakeConfig {
-  MakePkgConfig({this.installPath, this.signIdentity, this.scriptsPath});
+  MakePkgConfig(
+      {this.componentPath,
+      this.installPath,
+      this.signIdentity,
+      this.scriptsPath});
 
   factory MakePkgConfig.fromJson(Map<String, dynamic> json) {
     return MakePkgConfig(

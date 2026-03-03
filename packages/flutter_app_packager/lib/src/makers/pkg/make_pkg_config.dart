@@ -3,21 +3,19 @@ import 'dart:io';
 import 'package:flutter_app_packager/src/api/app_package_maker.dart';
 
 class MakePkgConfig extends MakeConfig {
-  MakePkgConfig(
-      {this.componentPath,
-      this.installPath,
-      this.signIdentity,
-      this.scriptsPath});
+  MakePkgConfig({
+    this.installPath,
+    this.signIdentity,
+    this.scriptsPath,
+  });
 
   factory MakePkgConfig.fromJson(Map<String, dynamic> json) {
     return MakePkgConfig(
-      componentPath: json['component-path'],
       installPath: json['install-path'],
       signIdentity: json['sign-identity'],
       scriptsPath: json['scripts-path'],
     );
   }
-  final String? componentPath;
   final String? installPath;
   final String? signIdentity;
   final String? scriptsPath;
@@ -25,7 +23,6 @@ class MakePkgConfig extends MakeConfig {
   @override
   Map<String, dynamic> toJson() {
     return {
-      'component-path': componentPath,
       'install-path': installPath,
       'sign-identity': signIdentity,
       'scripts-path': scriptsPath,

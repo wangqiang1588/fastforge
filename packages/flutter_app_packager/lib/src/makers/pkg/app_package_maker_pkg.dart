@@ -34,7 +34,7 @@ class AppPackageMakerPkg extends AppPackageMaker {
 
     final pkgBuild = [
       'productbuild',
-      '--root',
+      '--component',
       appFile.path,
       makeConfig.installPath ?? '/Applications/',
       unsignedPkgFile.path,
@@ -42,10 +42,6 @@ class AppPackageMakerPkg extends AppPackageMaker {
     if (null != makeConfig.scriptsPath) {
       pkgBuild.add('--scripts');
       pkgBuild.add(makeConfig.scriptsPath!);
-    }
-    if (null != makeConfig.componentPath) {
-      pkgBuild.add('--component');
-      pkgBuild.add(makeConfig.componentPath!);
     }
 
     await $('xcrun', pkgBuild);
